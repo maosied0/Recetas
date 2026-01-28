@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecetaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        Task {
+            let comidaList = await ComidaProvider().getComidaList()
+            print(comidaList)
+            
+        }
     }
 
 
