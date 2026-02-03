@@ -126,38 +126,6 @@ struct Comida: Codable{
         return measuresList
     }
     
-    
- /*   enum CodingKeys: String, CodingKey {
-        case strInstructions = "instrucciones"
-        case strYoutube = "video"
-        case strSource = "origen"
-        case strIngredient1 = "ingrediente1"
-        case strIngredient2 = "ingrediente2"
-        case strIngredient3 = "ingrediente3"
-        case strIngredient4 = "ingrediente4"
-        case strIngredient5 = "ingrediente5"
-        case strIngredient6 = "ingrediente6"
-        case strIngredient7 = "ingrediente7"
-        case strIngredient8 = "ingrediente8"
-        case strIngredient9 = "ingrediente9"
-        case strIngredient10 = "ingrediente10"
-        case strIngredient11 = "ingrediente11"
-        case strIngredient12 = "ingrediente12"
-        case strIngredient13 = "ingrediente13"
-        case strIngredient14 = "ingrediente14"
-        case strIngredient15 = "ingrediente15"
-        case strIngredient16 = "ingrediente16"
-        case strIngredient17 = "ingrediente17"
-        case strIngredient18 = "ingrediente18"
-        case strIngredient19 = "ingrediente19"
-        case strIngredient20 = "ingrediente20"
-        
-        case idMeal, strMeal,strMealThumb,strCategory, strArea
-             //
-        
 
- 
-    }
-*/
     
 }

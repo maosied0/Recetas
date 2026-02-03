@@ -12,19 +12,35 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var thumbnaiImagView: UIImageView!
     
+    @IBOutlet weak var mealLabel: UILabel! //Titulo
+    
+    @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var ingredientsLabel: UILabel!
     
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     var comida: Comida!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         navigationItem.title = comida.strMeal
         
+        cargarDatos()
+
+        // Do any additional setup after loading the view.
+     
+        
         thumbnaiImagView.loadFrom(url: comida.strMealThumb)
+        
+        
+        
+        func cargarDatos (){
+            mealLabel.text = comida.strMeal
+            categoryLabel.text = comida.strCategory
+            instructionsLabel.text = comida.strInstructions
+        }
         
         // Recogemos los ingredientes y sus medidas
         let ingredientsList = comida.getIngredients()
@@ -42,6 +58,23 @@ class DetailViewController: UIViewController {
         ingredientsLabel.text = ingredientsText
         
     }
+    
+     
+    
+    //func configure1() {
+        /*titleLabel.text = comida.strMeal
+        thumbnailImageView.loadFrom(url: comida.strMealThumb)
+        paisLabel.text = comida.strArea
+        categoriaLabel.text = comida.strCategory
+        
+        
+        imagView.layer.cornerRadius = 70
+        imagView.layer.masksToBounds = true
+        
+        
+        cardView.layer.cornerRadius = 100
+        cardView.layer.masksToBounds = true*/
+  //  }
     
 
     /*

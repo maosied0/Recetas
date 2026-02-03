@@ -11,7 +11,6 @@ class ComidaViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    
     @IBOutlet weak var imagView: UIView!
     
     @IBOutlet weak var cardView: UIView!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecetaViewController: UIViewController, UITableViewDataSource {
+class RecetaViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,9 +20,16 @@ class RecetaViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
         
+        buscarComidas(query: "")
+    }
+    
+    func buscarComidas(query: String) {
         Task {
-                comidaList = await ComidaProvider.getComidaList()
+            comidaList = await ComidaProvider.getComidaList(query: query)
             print(comidaList)
             
             DispatchQueue.main.async {
@@ -31,6 +38,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource {
                 
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comidaList.count
     }
@@ -42,6 +50,16 @@ class RecetaViewController: UIViewController, UITableViewDataSource {
         return cell
         
     }
+  //  var comidaList: [Comida] = []
+    //var filterComidaList: [Comida] = []
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        buscarComidas(query: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        buscarComidas(query: "")
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailViewController = segue.destination as! DetailViewController
         let IndexPath = tableView.indexPathForSelectedRow!

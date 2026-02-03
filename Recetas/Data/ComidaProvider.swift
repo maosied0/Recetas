@@ -9,8 +9,8 @@ import Foundation
 
 class ComidaProvider {
     
-  static  func getComidaList() async -> [Comida] {
-        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=")
+    static  func getComidaList(query: String) async -> [Comida] {
+        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=\(query)")
         
         guard let url = url else {
             print("Invalid URL")
