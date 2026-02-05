@@ -59,6 +59,10 @@ class DetailViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let videoVC = segue.destination as! VideosViewController
+        videoVC.configure(with: comida)
+    }
      
     
     //func configure1() {
